@@ -41,7 +41,6 @@ var ligoMode = builder.Configuration["Ligo:Mode"] ?? "Mock";
 
 if (ligoMode.Equals("Real", StringComparison.OrdinalIgnoreCase))
 {
-    // Validate mandatory Real mode configurations on startup
     var authUrl = builder.Configuration["Ligo:AuthBaseUrl"];
     var login = builder.Configuration["Ligo:AuthLogin"];
     var password = builder.Configuration["Ligo:AuthPassword"];
@@ -125,6 +124,9 @@ using (var scope = app.Services.CreateScope())
         db.SaveChanges();
     }
 }
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 if (app.Environment.IsDevelopment() || true)
 {
