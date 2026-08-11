@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Jrc.LigoCampaignGateway.Api/Jrc.LigoCampaignGateway.Api.csproj" />
+    <Project Path="src/Jrc.LigoCampaignGateway.Application/Jrc.LigoCampaignGateway.Application.csproj" />
+    <Project Path="src/Jrc.LigoCampaignGateway.Domain/Jrc.LigoCampaignGateway.Domain.csproj" />
+    <Project Path="src/Jrc.LigoCampaignGateway.Infrastructure/Jrc.LigoCampaignGateway.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/Contract/">
+    <Project Path="tests/Contract/Jrc.LigoCampaignGateway.ContractTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Integration/">
+    <Project Path="tests/Integration/Jrc.LigoCampaignGateway.IntegrationTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Unit/">
+    <Project Path="tests/Unit/Jrc.LigoCampaignGateway.UnitTests.csproj" />
+  </Folder>
+</Solution>

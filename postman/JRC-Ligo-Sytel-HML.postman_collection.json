@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "a9b8c7d6-e5f4-4a3b-8c2d-1e0f9a8b7c6d",
+		"name": "JRC Ligo Sytel Gateway - Homologacao (HML)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{middleware_base_url}}/health",
+					"host": ["{{middleware_base_url}}"],
+					"path": ["health"]
+				}
+			}
+		},
+		{
+			"name": "2. Sytel Legacy GET (Outbound Disparo)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{middleware_base_url}}/softdial/Whats_New_API_whatsapp_ativo/SendWhatsAppOutboundTemplate?numberchip={{numberchip}}&template={{template_id}}&destination={{telephone}}&field1=Joao&field2=31/08/2026&recordId={{record_id}}",
+					"host": ["{{middleware_base_url}}"],
+					"path": ["softdial", "Whats_New_API_whatsapp_ativo", "SendWhatsAppOutboundTemplate"],
+					"query": [
+						{ "key": "numberchip", "value": "{{numberchip}}" },
+						{ "key": "template", "value": "{{template_id}}" },
+						{ "key": "destination", "value": "{{telephone}}" },
+						{ "key": "field1", "value": "Joao" },
+						{ "key": "field2", "value": "31/08/2026" },
+						{ "key": "recordId", "value": "{{record_id}}" }
+					]
+				}
+			}
+		},
+		{
+			"name": "3. Sytel Legacy GetTemplates XML",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{middleware_base_url}}/softdial/Whats_New_API_whatsapp_ativo/GetWhatsAppOutboundTemplatesCollection?numberchip={{numberchip}}",
+					"host": ["{{middleware_base_url}}"],
+					"path": ["softdial", "Whats_New_API_whatsapp_ativo", "GetWhatsAppOutboundTemplatesCollection"],
+					"query": [
+						{ "key": "numberchip", "value": "{{numberchip}}" }
+					]
+				}
+			}
+		},
+		{
+			"name": "4. Middleware Modern POST HSM",
+			"request": {
+				"method": "POST",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"source\": \"POSTMAN_HML\",\n  \"campaign\": \"WhatappJRC_Ativo\",\n  \"recordId\": \"REC_1002\",\n  \"numberChip\": \"{{numberchip}}\",\n  \"destination\": \"{{telephone}}\",\n  \"templateId\": \"{{template_id}}\",\n  \"bodyParameters\": [\"Maria Silva\", \"15/09/2026\"]\n}"
+				},
+				"url": {
+					"raw": "{{middleware_base_url}}/api/v1/outbound/hsm-media",
+					"host": ["{{middleware_base_url}}"],
+					"path": ["api", "v1", "outbound", "hsm-media"]
+				}
+			}
+		},
+		{
+			"name": "5. Webhook Status Ingestion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"JRC_DISPATCH_REC_1002\",\n  \"numberchip\": \"{{numberchip}}\",\n  \"telephone\": \"{{telephone}}\",\n  \"date\": \"2026-08-04T12:00:00.000Z\",\n  \"status\": \"3 - READ\",\n  \"type\": \"WhatsappStatus\",\n  \"conversationCategory\": \"MARKETING\"\n}"
+				},
+				"url": {
+					"raw": "{{middleware_base_url}}/api/v1/webhooks/ligo/status",
+					"host": ["{{middleware_base_url}}"],
+					"path": ["api", "v1", "webhooks", "ligo", "status"]
+				}
+			}
+		}
+	]
+}

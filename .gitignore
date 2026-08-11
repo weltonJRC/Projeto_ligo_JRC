@@ -1,0 +1,36 @@
+# Build & Output
+bin/
+obj/
+out/
+
+# IDE & Editor files
+.vs/
+.vscode/
+.idea/
+.antigravity/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+**/appsettings.Local.json
+**/appsettings.Production.json
+**/secrets.json
+**/usersecrets/
+*.pfx
+*.p12
+*.pem
+*.key
+
+# Logs & Storage
+logs/
+*.log
+media/
+storage/
+data/media/
+postgres-data/
+pgdata/
+
+# References & Zips
+references/
+*.zip

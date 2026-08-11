@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  gateway-api:
+    build:
+      context: ../..
+      dockerfile: deploy/docker/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - LIGO__MODE=Mock
+      - LIGO__AUTHBASEURL=https://api.messaging.digitalcontact.cloud
+      - LIGO__MESSAGINGBASEURL=https://apiwhatsapp.messaging.digitalcontact.cloud
+      - SYTEL__ALLOWEDTENANT=grupojrc
+      - SYTEL__ALLOWEDNUMBERCHIP=551148004100
+      - ConnectionStrings__DefaultConnection=Host=postgres-db;Database=jrc_gateway_db;Username=jrc_user;Password=jrc_secure_pass
+    depends_on:
+      - postgres-db
+
+  postgres-db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: jrc_gateway_db
+      POSTGRES_USER: jrc_user
+      POSTGRES_PASSWORD: jrc_secure_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
