@@ -1,0 +1,1640 @@
+<?xml version="1.0"?>
+<scriptInstance xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Start" subscript="false" xmlns="http://sytelco.com/schemas/scripter2/script.xsd">
+  <assemblySection>
+    <assemblies>
+      <assembly content="steps">JRCOminichannel.StepLibrary.dll</assembly>
+      <assembly content="steps">Screens.dll</assembly>
+      <assembly content="steps">Sytel.StepLibrary.dll</assembly>
+      <assembly content="steps">Sytel.TextProcessing.dll</assembly>
+    </assemblies>
+  </assemblySection>
+  <interfaceSection>
+    <interfaceParameters />
+  </interfaceSection>
+  <dataSection>
+    <variables>
+      <variable name="cbtime" default="" />
+      <variable name="Texto" default="" />
+      <variable name="acao_escolhida" default="" />
+      <variable name="configXML" default="" />
+      <variable name="iniMsg" default="" />
+      <variable name="botao1texto" default="" />
+      <variable name="botao1enabled" default="" />
+      <variable name="botao1textoBotao" default="" />
+      <variable name="botao2enabled" default="" />
+      <variable name="botao3enabled" default="" />
+      <variable name="botao4enabled" default="" />
+      <variable name="botaoFinalizacao1qualificacao" default="" />
+      <variable name="botaoFinalizacao2enabled" default="" />
+      <variable name="botaoFinalizacao3enabled" default="" />
+      <variable name="botaoFinalizacao4enabled" default="" />
+      <variable name="botao2texto" default="" />
+      <variable name="botao3texto" default="" />
+      <variable name="botao4texto" default="" />
+      <variable name="botaoFinalizacao2texto" default="" />
+      <variable name="botaoFinalizacao3texto" default="" />
+      <variable name="botaoFinalizacao1textoBotao" default="" />
+      <variable name="botaoFinalizacao4texto" default="" />
+      <variable name="botao2textoBotao" default="" />
+      <variable name="botao3textoBotao" default="" />
+      <variable name="botao4textoBotao" default="" />
+      <variable name="botaoFinalizacao2textoBotao" default="" />
+      <variable name="botaoFinalizacao3textoBotao" default="" />
+      <variable name="botaoFinalizacao4textoBotao" default="" />
+      <variable name="botaoFinalizacao2qualificacao" default="" />
+      <variable name="botaoFinalizacao3qualificacao" default="" />
+      <variable name="botaoFinalizacao4qualificacao" default="" />
+      <variable name="nomeEndpoint" default="" />
+      <variable name="nomeAgente" default="" />
+      <variable name="nextValueName" default="" />
+      <variable name="botao5texto" default="" />
+      <variable name="botaoFinalizacao1enabled" default="" />
+      <variable name="botaoFinalizacao1texto" default="" />
+      <variable name="botao5enabled" default="" />
+      <variable name="botao5textoBotao" default="" />
+      <variable name="outcome" default="0" />
+      <variable name="protocolo" default="" />
+      <variable name="gerarProtocolo" default="false" />
+      <variable name="fila1" default="" />
+      <variable name="fila2" default="" />
+      <variable name="fila3" default="" />
+      <variable name="fila4" default="" />
+      <variable name="fila5" default="" />
+      <variable name="fila6" default="" />
+      <variable name="fila7" default="" />
+      <variable name="fila8" default="" />
+      <variable name="fila9" default="" />
+      <variable name="fila10" default="" />
+      <variable name="NumeroFilas" default="" />
+      <variable name="fila1Texto" default="" />
+      <variable name="fila2Texto" default="" />
+      <variable name="fila3Texto" default="" />
+      <variable name="fila4Texto" default="" />
+      <variable name="fila5Texto" default="" />
+      <variable name="fila6Texto" default="" />
+      <variable name="fila7Texto" default="" />
+      <variable name="fila8Texto" default="" />
+      <variable name="fila9Texto" default="" />
+      <variable name="fila" default="" />
+      <variable name="fila1Enabled" default="" />
+      <variable name="fila2Enabled" default="" />
+      <variable name="fila3Enabled" default="" />
+      <variable name="fila4Enabled" default="" />
+      <variable name="fila5Enabled" default="" />
+      <variable name="fila6Enabled" default="" />
+      <variable name="fila7Enabled" default="" />
+      <variable name="fila8Enabled" default="" />
+      <variable name="fila9Enabled" default="" />
+      <variable name="fila1Q" default="" />
+      <variable name="fila2Q" default="" />
+      <variable name="fila3Q" default="" />
+      <variable name="fila4Q" default="" />
+      <variable name="fila5Q" default="" />
+      <variable name="fila6Q" default="" />
+      <variable name="db_dsn" default="" />
+      <variable name="db_user" default="" />
+      <variable name="db_pass" default="" />
+      <variable name="db_table" default="" />
+      <variable name="db_result" default="" />
+      <variable name="botao6textoBotao" default="" />
+      <variable name="botao7textoBotao" default="" />
+      <variable name="botao8textoBotao" default="" />
+      <variable name="botao9textoBotao" default="" />
+      <variable name="botao10textoBotao" default="" />
+      <variable name="botao6texto" default="" />
+      <variable name="botao7texto" default="" />
+      <variable name="botao8texto" default="" />
+      <variable name="botao9texto" default="" />
+      <variable name="botao10texto" default="" />
+      <variable name="botao6enabled" default="" />
+      <variable name="botao7enabled" default="" />
+      <variable name="botao8enabled" default="" />
+      <variable name="botao9enabled" default="" />
+      <variable name="botao10enabled" default="" />
+      <variable name="mocchiOrigemBot" default="" />
+      <variable name="mocchiTipoContexto" default="" />
+      <variable name="mocchiExibirScreenPop" default="false" />
+      <variable name="mocchiNome" default="" />
+      <variable name="mocchiEmpresa" default="" />
+      <variable name="mocchiTelefone" default="" />
+      <variable name="mocchiEmail" default="" />
+      <variable name="mocchiProduto" default="" />
+      <variable name="mocchiPlano" default="" />
+      <variable name="mocchiProdutos" default="" />
+      <variable name="mocchiRecursos" default="" />
+      <variable name="mocchiCanais" default="" />
+      <variable name="mocchiAtendentes" default="" />
+      <variable name="mocchiRamais" default="" />
+      <variable name="mocchiUsuarios" default="" />
+      <variable name="mocchiVolume" default="" />
+      <variable name="mocchiTipoOperacao" default="" />
+      <variable name="mocchiSolucaoAtual" default="" />
+      <variable name="mocchiDor" default="" />
+      <variable name="mocchiIntegracoes" default="" />
+      <variable name="mocchiPrazo" default="" />
+      <variable name="mocchiTier" default="" />
+      <variable name="mocchiUrgencia" default="" />
+      <variable name="mocchiPrioridade" default="" />
+      <variable name="mocchiIntencao" default="" />
+      <variable name="mocchiResumo" default="" />
+      <variable name="mocchiConversationId" default="" />
+      <variable name="mocchiMessageId" default="" />
+    </variables>
+  </dataSection>
+  <campaignSection>
+    <campaignFields>
+      <campaignField name="Title" default="" />
+      <campaignField name="Forename" default="" />
+      <campaignField name="Surname" default="" />
+      <campaignField name="data" default="" />
+    </campaignFields>
+  </campaignSection>
+  <imagesSection>
+    <images />
+  </imagesSection>
+  <logicSection entryPoint="Logic1">
+    <logicElements>
+      <logicElement index="Logic1" stepID="Step1">
+        <outcomes>
+          <outcome name="Next" map="Logic75" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic75" stepID="Step99">
+        <outcomes>
+          <outcome name="Next" map="Logic76" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic76" stepID="Step100">
+        <outcomes>
+          <outcome name="NEXT" map="Logic77" code="" field="" capture="false" />
+          <outcome name="FAIL" map="Logic77" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic77" stepID="Step101">
+        <outcomes>
+          <outcome name="NEXT" map="Logic78" code="" field="" capture="false" />
+          <outcome name="FAIL" map="Logic78" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic78" stepID="Step102">
+        <outcomes>
+          <outcome name="NEXT" map="Logic79" code="" field="" capture="false" />
+          <outcome name="FAIL" map="Logic79" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic79" stepID="Step103">
+        <outcomes>
+          <outcome name="NEXT" map="Logic4" code="" field="" capture="false" />
+          <outcome name="FAIL" map="Logic4" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic2" stepID="Step2">
+        <outcomes />
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic3" stepID="Step3">
+        <outcomes>
+          <outcome name="fila1" map="Logic51" code="" field="" capture="false" />
+          <outcome name="botao5" map="Logic30" code="" field="" capture="false" />
+          <outcome name="botao2" map="Logic28" code="" field="" capture="false" />
+          <outcome name="botao1" map="Logic27" code="" field="" capture="false" />
+          <outcome name="Botao6Texto" map="Logic70" code="" field="" capture="false" />
+          <outcome name="botao4" map="Logic31" code="" field="" capture="false" />
+          <outcome name="botao3" map="Logic29" code="" field="" capture="false" />
+          <outcome name="Botao8Texto" map="Logic72" code="" field="" capture="false" />
+          <outcome name="Botao10Texto" map="Logic74" code="" field="" capture="false" />
+          <outcome name="Botao9Texto" map="Logic73" code="" field="" capture="false" />
+          <outcome name="Botao7Texto" map="Logic71" code="" field="" capture="false" />
+          <outcome name="BotaoFinalizacao4Texto" map="Logic22" code="" field="${var:acao_escolhida}" capture="true" />
+          <outcome name="BotaoFinalizacao3Texto" map="Logic24" code="" field="${var:acao_escolhida}" capture="true" />
+          <outcome name="BotaoFinalizacao2Texto" map="Logic25" code="" field="${var:acao_escolhida}" capture="true" />
+          <outcome name="BotaoFinalizacao1Texto" map="Logic26" code="" field="${var:acao_escolhida}" capture="true" />
+          <outcome name="Enviar" map="Logic23" code="" field="" capture="false" />
+          <outcome name="requeue" map="Logic11" code="" field="" capture="false" />
+          <outcome name="fila2" map="Logic53" code="" field="" capture="false" />
+          <outcome name="fila3" map="Logic54" code="" field="" capture="false" />
+          <outcome name="fila4" map="Logic55" code="" field="" capture="false" />
+          <outcome name="fila5" map="Logic56" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="name" />
+      </logicElement>
+      <logicElement index="Logic6" stepID="Step6">
+        <outcomes>
+          <outcome name="Next" map="Logic18" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic18" code="" field="" capture="false" />
+          <outcome name="Call Ended" map="Logic18" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic7" stepID="Step7">
+        <outcomes>
+          <outcome name="Next" map="Logic20" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic12" stepID="Step12">
+        <outcomes>
+          <outcome name="Next" map="Logic7" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic7" code="" field="" capture="false" />
+          <outcome name="Call Ended" map="Logic18" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic13" stepID="Step13">
+        <outcomes>
+          <outcome name="Next" map="Logic6" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic6" code="" field="" capture="false" />
+          <outcome name="Call Ended" map="Logic18" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic15" stepID="Step15">
+        <outcomes>
+          <outcome name="Confirm" map="Logic17" code="" field="" capture="false" />
+          <outcome name="Cancel" map="Logic6" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic16" stepID="Step16">
+        <outcomes>
+          <outcome name="Next" map="Logic15" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic15" code="" field="" capture="false" />
+          <outcome name="Call Ended" map="Logic18" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic17" stepID="Step17">
+        <outcomes>
+          <outcome name="Next" map="Logic6" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic6" code="" field="" capture="false" />
+          <outcome name="Call Ended" map="Logic18" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic18" stepID="Step18">
+        <outcomes>
+          <outcome name="Next" map="Logic2" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic20" stepID="Step20">
+        <outcomes>
+          <outcome name="Next" map="Logic21" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic21" stepID="Step21">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic22" stepID="Step22">
+        <outcomes>
+          <outcome name="Next" map="Logic42" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic23" stepID="Step23">
+        <outcomes>
+          <outcome name="Default" map="Logic12" code="" field="" capture="false" />
+          <outcome name="BotaoFinalizacao1Texto" map="Logic13" code="" field="" capture="false" />
+          <outcome name="BotaoFinalizacao2Texto" map="Logic13" code="" field="" capture="false" />
+          <outcome name="BotaoFinalizacao3Texto" map="Logic13" code="" field="" capture="false" />
+          <outcome name="Botao1Texto" map="Logic12" code="" field="" capture="false" />
+          <outcome name="Botao2Texto" map="Logic12" code="" field="" capture="false" />
+          <outcome name="Botao3Texto" map="Logic12" code="" field="" capture="false" />
+          <outcome name="Botao4Texto" map="Logic12" code="" field="" capture="false" />
+          <outcome name="Botao5Texto" map="Logic12" code="" field="" capture="false" />
+          <outcome name="BotaoFinalizacao4Texto" map="Logic16" code="" field="" capture="false" />
+          <outcome name="Botao6Texto" map="Logic12" code="" field="" capture="false" />
+          <outcome name="Botao7Texto" map="Logic12" code="" field="" capture="false" />
+          <outcome name="Botao8Texto" map="Logic12" code="" field="" capture="false" />
+          <outcome name="Botao9Texto" map="Logic12" code="" field="" capture="false" />
+          <outcome name="Botao10Texto" map="Logic12" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic24" stepID="Step24">
+        <outcomes>
+          <outcome name="Next" map="Logic43" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic25" stepID="Step25">
+        <outcomes>
+          <outcome name="Next" map="Logic44" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic26" stepID="Step26">
+        <outcomes>
+          <outcome name="Next" map="Logic45" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic27" stepID="Step27">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic28" stepID="Step28">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic29" stepID="Step29">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic30" stepID="Step30">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic31" stepID="Step31">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic4" stepID="Step4">
+        <outcomes>
+          <outcome name="Next" map="Logic5" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic5" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic5" stepID="Step5">
+        <outcomes>
+          <outcome name="Next" map="Logic39" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic39" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic9" stepID="Step9">
+        <outcomes>
+          <outcome name="Less" map="Logic3" code="" field="" capture="false" />
+          <outcome name="Greater" map="Logic35" code="" field="" capture="false" />
+          <outcome name="Equal" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic10" stepID="Step10">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic3" code="" field="" capture="false" />
+          <outcome name="Call Ended" map="Logic33" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic11" stepID="Step11">
+        <outcomes>
+          <outcome name="Next" map="Logic33" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic14" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic14" stepID="Step14">
+        <outcomes>
+          <outcome name="ok" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic32" stepID="Step32">
+        <outcomes />
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic33" stepID="Step33">
+        <outcomes>
+          <outcome name="Next" map="Logic32" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic32" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic34" stepID="Step34">
+        <outcomes>
+          <outcome name="Next" map="Logic10" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic35" stepID="Step35">
+        <outcomes>
+          <outcome name="Next" map="Logic36" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic36" stepID="Step36">
+        <outcomes>
+          <outcome name="Next" map="Logic38" code="" field="" capture="false" />
+          <outcome name="End Loop" map="Logic34" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic37" stepID="Step37">
+        <outcomes>
+          <outcome name="True" map="Logic36" code="" field="" capture="false" />
+          <outcome name="False" map="Logic34" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic38" stepID="Step38">
+        <outcomes>
+          <outcome name="Next" map="Logic37" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic39" stepID="Step39">
+        <outcomes>
+          <outcome name="Next" map="Logic40" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic40" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic40" stepID="Step40">
+        <outcomes>
+          <outcome name="Next" map="Logic41" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic41" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic41" stepID="Step41">
+        <outcomes>
+          <outcome name="Next" map="Logic19" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic19" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic42" stepID="Step42">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic43" stepID="Step43">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic44" stepID="Step44">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic45" stepID="Step45">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic46" stepID="Step46">
+        <outcomes>
+          <outcome name="Default" map="Logic9" code="" field="" capture="false" />
+          <outcome name="true" map="Logic48" code="" field="" capture="false" />
+          <outcome name="True" map="Logic48" code="" field="" capture="false" />
+          <outcome name="TRUE" map="Logic48" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic47" stepID="Step47">
+        <outcomes>
+          <outcome name="Next" map="Logic9" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic48" stepID="Step48">
+        <outcomes>
+          <outcome name="NEXT" map="Logic47" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic19" stepID="Step19">
+        <outcomes>
+          <outcome name="Next" map="Logic49" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic49" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic49" stepID="Step49">
+        <outcomes>
+          <outcome name="Next" map="Logic58" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic58" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic50" stepID="Step50">
+        <outcomes>
+          <outcome name="Next" map="Logic46" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic51" stepID="Step51">
+        <outcomes>
+          <outcome name="Next" map="Logic62" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic52" stepID="Step52">
+        <outcomes>
+          <outcome name="Next" map="Logic57" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic53" stepID="Step53">
+        <outcomes>
+          <outcome name="Next" map="Logic63" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic54" stepID="Step54">
+        <outcomes>
+          <outcome name="Next" map="Logic64" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic55" stepID="Step55">
+        <outcomes>
+          <outcome name="Next" map="Logic65" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic56" stepID="Step56">
+        <outcomes>
+          <outcome name="Next" map="Logic61" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic57" stepID="Step57">
+        <outcomes>
+          <outcome name="Next" map="Logic60" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic14" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic58" stepID="Step58">
+        <outcomes>
+          <outcome name="Next" map="Logic68" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic68" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic8" stepID="Step8">
+        <outcomes>
+          <outcome name="Next" map="Logic32" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic32" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic60" stepID="Step60">
+        <outcomes>
+          <outcome name="Next" map="Logic8" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic61" stepID="Step61">
+        <outcomes>
+          <outcome name="Next" map="Logic52" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic62" stepID="Step62">
+        <outcomes>
+          <outcome name="Next" map="Logic52" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic63" stepID="Step63">
+        <outcomes>
+          <outcome name="Next" map="Logic52" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic64" stepID="Step64">
+        <outcomes>
+          <outcome name="Next" map="Logic52" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic65" stepID="Step65">
+        <outcomes>
+          <outcome name="Next" map="Logic52" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic66" stepID="Step66">
+        <outcomes>
+          <outcome name="Next" map="Logic59" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic59" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic67" stepID="Step67">
+        <outcomes>
+          <outcome name="Fail" map="Logic50" code="" field="" capture="false" />
+          <outcome name="Success" map="Logic50" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic68" stepID="Step68">
+        <outcomes>
+          <outcome name="Next" map="Logic66" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic66" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic59" stepID="Step59">
+        <outcomes>
+          <outcome name="Next" map="Logic69" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic69" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic69" stepID="Step69">
+        <outcomes>
+          <outcome name="Next" map="Logic67" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic67" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic70" stepID="Step70">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic71" stepID="Step71">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic72" stepID="Step72">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic73" stepID="Step73">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic74" stepID="Step74">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+    </logicElements>
+  </logicSection>
+  <stepSection>
+    <steps>
+      <step id="Step1" name="Start Script" component="Sytel.StepLibrary.StartScript">
+        <params />
+        <returnValues />
+      </step>
+      <step id="Step2" name="Exit Script" component="Sytel.StepLibrary.ExitScript">
+        <params>
+          <param name="ExitCode" direction="in" value="Next" />
+          <param name="UpdateBindings" direction="in" value="true" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step3" name="Responses" component="Screens.Responses">
+        <params>
+          <param name="lbBotao5" direction="in" value="${var:botao5textoBotao}" />
+          <param name="lbFila1" direction="in" value="${var:fila1Texto}" />
+          <param name="fila1Texto_Enabled" direction="in" value="${var:fila1Enabled}" />
+          <param name="fila1Texto_Enabled" direction="out" value="${var:fila}" />
+          <param name="lbBotao2" direction="in" value="${var:botao2textoBotao}" />
+          <param name="lbBotao1" direction="in" value="${var:botao1textoBotao}" />
+          <param name="botao6_Enabled" direction="in" value="${var:botao6enabled}" />
+          <param name="botao6_Enabled" direction="out" value="${var:botao6enabled}" />
+          <param name="lbBotao10" direction="in" value="${var:botao10textoBotao}" />
+          <param name="lbBotao9" direction="in" value="${var:botao9textoBotao}" />
+          <param name="lbBotao8" direction="in" value="${var:botao8textoBotao}" />
+          <param name="lbBotao6" direction="in" value="${var:botao6textoBotao}" />
+          <param name="lbBotao3" direction="in" value="${var:botao3textoBotao}" />
+          <param name="lbBotao4" direction="in" value="${var:botao4textoBotao}" />
+          <param name="botao8_Enabled" direction="in" value="${var:botao8enabled}" />
+          <param name="botao8_Enabled" direction="out" value="${var:botao8enabled}" />
+          <param name="botao10_Enabled" direction="in" value="${var:botao1enabled}" />
+          <param name="botao10_Enabled" direction="out" value="${var:botao1enabled}" />
+          <param name="botao9_Enabled" direction="in" value="${var:botao9enabled}" />
+          <param name="botao9_Enabled" direction="out" value="${var:botao9enabled}" />
+          <param name="lbBotao7" direction="in" value="${var:botao7textoBotao}" />
+          <param name="botao7_Enabled" direction="in" value="${var:botao7enabled}" />
+          <param name="botao7_Enabled" direction="out" value="${var:botao7enabled}" />
+          <param name="lbFila5" direction="in" value="${var:fila5Texto}" />
+          <param name="lbFila4" direction="in" value="${var:fila4Texto}" />
+          <param name="lbFila3" direction="in" value="${var:fila3Texto}" />
+          <param name="lbFila2" direction="in" value="${var:fila2Texto}" />
+          <param name="lbFinalizacao4" direction="in" value="${var:botaoFinalizacao4textoBotao}" />
+          <param name="BotaoFinalizacao4_Enabled" direction="in" value="${var:botaoFinalizacao4enabled}" />
+          <param name="BotaoFinalizacao4_Enabled" direction="out" value="${var:botaoFinalizacao4enabled}" />
+          <param name="lbFinalizacao3" direction="in" value="${var:botaoFinalizacao3textoBotao}" />
+          <param name="BotaoFinalizacao3_Enabled" direction="in" value="${var:botaoFinalizacao3enabled}" />
+          <param name="BotaoFinalizacao3_Enabled" direction="out" value="${var:botaoFinalizacao3enabled}" />
+          <param name="lbFinalizacao2" direction="in" value="${var:botaoFinalizacao2textoBotao}" />
+          <param name="BotaoFinalizacao2_Enabled" direction="in" value="${var:botaoFinalizacao2enabled}" />
+          <param name="BotaoFinalizacao2_Enabled" direction="out" value="${var:botaoFinalizacao2enabled}" />
+          <param name="lbFinalizacao1" direction="in" value="${var:botaoFinalizacao1textoBotao}" />
+          <param name="BotaoFinalizacao1_Enabled" direction="in" value="${var:botaoFinalizacao1enabled}" />
+          <param name="BotaoFinalizacao1_Enabled" direction="out" value="${var:botaoFinalizacao1enabled}" />
+          <param name="TextoValidar" direction="in" value="${var:Texto}" />
+          <param name="TextoValidar" direction="out" value="${var:Texto}" />
+          <param name="fila2Texto_Enabled" direction="in" value="${var:fila2Enabled}" />
+          <param name="fila2Texto_Enabled" direction="out" value="${var:fila2Enabled}" />
+          <param name="fila3Texto_Enabled" direction="in" value="${var:fila3Enabled}" />
+          <param name="fila3Texto_Enabled" direction="out" value="${var:fila3Enabled}" />
+          <param name="fila4Texto_Enabled" direction="in" value="${var:fila4Enabled}" />
+          <param name="fila4Texto_Enabled" direction="out" value="${var:fila4Enabled}" />
+          <param name="fila5Texto_Enabled" direction="in" value="${var:fila5Enabled}" />
+          <param name="fila5Texto_Enabled" direction="out" value="${var:fila5Enabled}" />
+          <param name="Botao5Texto_Enabled" direction="in" value="${var:botao5enabled}" />
+          <param name="Botao5Texto_Enabled" direction="out" value="${var:botao5enabled}" />
+          <param name="Botao2Texto_Enabled" direction="in" value="${var:botao2enabled}" />
+          <param name="Botao2Texto_Enabled" direction="out" value="${var:botao2enabled}" />
+          <param name="Botao1Texto_Enabled" direction="in" value="${var:botao1enabled}" />
+          <param name="Botao1Texto_Enabled" direction="out" value="${var:botao1enabled}" />
+          <param name="Botao4Texto_Enabled" direction="in" value="${var:botao4enabled}" />
+          <param name="Botao4Texto_Enabled" direction="out" value="${var:botao4enabled}" />
+          <param name="Botao3Texto_Enabled" direction="in" value="${var:botao3enabled}" />
+          <param name="Botao3Texto_Enabled" direction="out" value="${var:botao3enabled}" />
+          <param name="txtMocchiNome" direction="in" value="${var:mocchiNome}" />
+          <param name="txtMocchiEmpresa" direction="in" value="${var:mocchiEmpresa}" />
+          <param name="txtMocchiTelefone" direction="in" value="${var:mocchiTelefone}" />
+          <param name="txtMocchiEmail" direction="in" value="${var:mocchiEmail}" />
+          <param name="txtMocchiProduto" direction="in" value="${var:mocchiProduto}" />
+          <param name="txtMocchiCanais" direction="in" value="${var:mocchiCanais}" />
+          <param name="txtMocchiAtendentes" direction="in" value="${var:mocchiAtendentes}" />
+          <param name="txtMocchiVolume" direction="in" value="${var:mocchiVolume}" />
+          <param name="txtMocchiDor" direction="in" value="${var:mocchiDor}" />
+          <param name="txtMocchiPrazo" direction="in" value="${var:mocchiPrazo}" />
+          <param name="txtMocchiPrioridade" direction="in" value="${var:mocchiPrioridade}" />
+          <param name="txtMocchiResumo" direction="in" value="${var:mocchiResumo}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step6" name="Bye" component="Sytel.TextProcessing.SendChatToCustomer">
+        <params>
+          <param name="CustomerID" direction="in" value="${sys:LastChatMessageFrom}" />
+          <param name="MessageText" direction="in" value="Até mais! ${cam:Title} ${cam:Surname}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step7" name="Back Stop" component="Sytel.StepLibrary.BackStop">
+        <params />
+        <returnValues />
+      </step>
+      <step id="Step12" name="Email" component="Sytel.TextProcessing.SendChatToCustomer">
+        <params>
+          <param name="CustomerID" direction="in" value="${sys:LastChatMessageFrom}" />
+          <param name="MessageText" direction="in" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step13" name="Conta Bloqueada" component="Sytel.TextProcessing.SendChatToCustomer">
+        <params>
+          <param name="CustomerID" direction="in" value="${sys:LastChatMessageFrom}" />
+          <param name="MessageText" direction="in" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step15" name="Callback" component="Screens.Callback">
+        <params>
+          <param name="CBTime_DateTime" direction="out" value="${var:cbtime}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step16" name="When" component="Sytel.TextProcessing.SendChatToCustomer">
+        <params>
+          <param name="CustomerID" direction="in" value="${sys:LastChatMessageFrom}" />
+          <param name="MessageText" direction="in" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step17" name="CBConfirm" component="Sytel.TextProcessing.SendChatToCustomer">
+        <params>
+          <param name="CustomerID" direction="in" value="${sys:LastChatMessageFrom}" />
+          <param name="MessageText" direction="in" value="Ligaremos de volta em ${var:cbtime}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step18" name="Hangup Call" component="Sytel.StepLibrary.HangupCall">
+        <params />
+        <returnValues />
+      </step>
+      <step id="Step20" name="Back Stop" component="Sytel.StepLibrary.BackStop">
+        <params />
+        <returnValues />
+      </step>
+      <step id="Step21" name="Back Stop" component="Sytel.StepLibrary.BackStop">
+        <params />
+        <returnValues />
+      </step>
+      <step id="Step22" name="botaoFinalizacao4texto" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botaoFinalizacao4texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step23" name="Decision Branch" component="Sytel.StepLibrary.SwitchStep">
+        <params>
+          <param name="Value" direction="in" value="${var:acao_escolhida}" />
+        </params>
+        <returnValues>
+          <returnValue name="BotaoFinalizacao1Texto" />
+          <returnValue name="BotaoFinalizacao2Texto" />
+          <returnValue name="BotaoFinalizacao3Texto" />
+          <returnValue name="Botao1Texto" />
+          <returnValue name="Botao2Texto" />
+          <returnValue name="Botao3Texto" />
+          <returnValue name="Botao4Texto" />
+          <returnValue name="Botao5Texto" />
+          <returnValue name="BotaoFinalizacao4Texto" />
+          <returnValue name="Botao6Texto" />
+          <returnValue name="Botao7Texto" />
+          <returnValue name="Botao8Texto" />
+          <returnValue name="Botao9Texto" />
+          <returnValue name="Botao10Texto" />
+        </returnValues>
+      </step>
+      <step id="Step24" name="Set botaoFinalizacao3texto" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botaoFinalizacao3texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step25" name="Set botaoFinalizacao2texto" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botaoFinalizacao2texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step26" name="Set botaoFinalizacao1texto" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botaoFinalizacao1texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step27" name="Set texto botao 1" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao1texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step28" name="Set texto botao 2" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao2texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step29" name="Set texto botao 3" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao3texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step30" name="Set texto botao 5" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao5texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step31" name="Set texto botao 4" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao4texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step4" name="Read Text File" component="Sytel.StepLibrary.ReadTextFile">
+        <params>
+          <param name="Contents" direction="out" value="${var:configXML}" />
+          <param name="FileName" direction="in" value="config.xml" />
+          <param name="UseScriptRoot" direction="in" value="Yes" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step5" name="Extract XML 1" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/iniMsg/text()" />
+          <param name="Query2" direction="in" value="/config/mensagemRapida1/@textoBotao" />
+          <param name="Query3" direction="in" value="/config/mensagemRapida1/@enabled" />
+          <param name="Query4" direction="in" value="/config/mensagemRapida1/text()" />
+          <param name="Query5" direction="in" value="/config/mensagemRapida2/@textoBotao" />
+          <param name="Query6" direction="in" value="/config/mensagemRapida2/@enabled" />
+          <param name="Query7" direction="in" value="/config/mensagemRapida2/text()" />
+          <param name="Query8" direction="in" value="/config/mensagemRapida3/@textoBotao" />
+          <param name="Query9" direction="in" value="/config/mensagemRapida3/@enabled" />
+          <param name="Query10" direction="in" value="/config/mensagemRapida3/text()" />
+          <param name="Result1" direction="out" value="${var:iniMsg}" />
+          <param name="Result2" direction="out" value="${var:botao1textoBotao}" />
+          <param name="Result3" direction="out" value="${var:botao1enabled}" />
+          <param name="Result4" direction="out" value="${var:botao1texto}" />
+          <param name="Result5" direction="out" value="${var:botao2textoBotao}" />
+          <param name="Result6" direction="out" value="${var:botao2enabled}" />
+          <param name="Result7" direction="out" value="${var:botao2texto}" />
+          <param name="Result8" direction="out" value="${var:botao3textoBotao}" />
+          <param name="Result9" direction="out" value="${var:botao3enabled}" />
+          <param name="Result10" direction="out" value="${var:botao3texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step9" name="iniMsg &gt; 0?" component="Sytel.StepLibrary.CompareStringLength">
+        <params>
+          <param name="InputString" direction="in" value="${var:iniMsg}" />
+          <param name="ValidLength" direction="in" value="0" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step10" name="send iniMsg" component="Sytel.TextProcessing.SendChatToCustomer">
+        <params>
+          <param name="CustomerID" direction="in" value="${sys:LastChatMessageFrom}" />
+          <param name="MessageText" direction="in" value="${var:iniMsg}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step11" name="ReQueue" component="Sytel.StepLibrary.ReQueue">
+        <params>
+          <param name="GroupAddress" direction="in" value="${sys:QueueAddress}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step14" name="mensagem" component="Screens.mensagem">
+        <params>
+          <param name="mensagem" direction="in" value="Houve um erro ao tentar enviar o contato para à fila. Por favor informe o supervisor." />
+          <param name="titulo" direction="in" value="Não foi possível retornar contato" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step32" name="Exit Script" component="Sytel.StepLibrary.ExitScript">
+        <params>
+          <param name="ExitCode" direction="in" value="transferido -&gt; ${var:outcome}" />
+          <param name="UpdateBindings" direction="in" value="true" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step33" name="End Call Transaction" component="Sytel.StepLibrary.EndCallTransaction">
+        <params>
+          <param name="AgentOutcome" direction="in" value="102" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step34" name="String Substitute" component="Sytel.StepLibrary.StringSubstituteStep">
+        <params>
+          <param name="InputString" direction="in" value="${var:iniMsg}" />
+          <param name="SearchString" direction="in" value="##nomeAgente##" />
+          <param name="ReplaceString" direction="in" value="${var:nomeAgente}" />
+          <param name="OutputString" direction="out" value="${var:iniMsg}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step35" name="Set Field" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${sys:AgentName}" />
+          <param name="Value" direction="out" value="${var:nomeEndpoint}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step36" name="Loop Over Values" component="Sytel.StepLibrary.LoopOverValues">
+        <params>
+          <param name="Values" direction="in" value="${var:nomeEndpoint}" />
+          <param name="Delimiter" direction="in" value="." />
+          <param name="NextValue" direction="out" value="${var:nextValueName}" />
+          <param name="RemainingValues" direction="out" value="${var:nomeEndpoint}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step37" name="Find String" component="Sytel.StepLibrary.StringFind">
+        <params>
+          <param name="InputString" direction="in" value="${var:nomeEndpoint}" />
+          <param name="SearchString" direction="in" value="." />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step38" name="Concatenate" component="Sytel.StepLibrary.StringConcat">
+        <params>
+          <param name="InputString1" direction="in" value="${var:nomeAgente} " />
+          <param name="InputString2" direction="in" value="${var:nextValueName}" />
+          <param name="OutputString" direction="out" value="${var:nomeAgente}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step39" name="Extract XML 2" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/mensagemRapida4/@textoBotao" />
+          <param name="Query2" direction="in" value="/config/mensagemRapida4/@enabled" />
+          <param name="Query3" direction="in" value="/config/mensagemRapida4/text()" />
+          <param name="Query4" direction="in" value="/config/mensagemRapida5/@textoBotao" />
+          <param name="Query5" direction="in" value="/config/mensagemRapida5/@enabled" />
+          <param name="Query6" direction="in" value="/config/mensagemRapida5/text()" />
+          <param name="Query7" direction="in" value="/config/mensagemFinalizacao1/@textoBotao" />
+          <param name="Query8" direction="in" value="/config/mensagemFinalizacao1/@enabled" />
+          <param name="Query9" direction="in" value="/config/mensagemFinalizacao1/text()" />
+          <param name="Query10" direction="in" value="/config/mensagemFinalizacao1/@codigoQualificacao" />
+          <param name="Result1" direction="out" value="${var:botao4textoBotao}" />
+          <param name="Result2" direction="out" value="${var:botao4enabled}" />
+          <param name="Result3" direction="out" value="${var:botao4texto}" />
+          <param name="Result4" direction="out" value="${var:botao5textoBotao}" />
+          <param name="Result5" direction="out" value="${var:botao5enabled}" />
+          <param name="Result6" direction="out" value="${var:botao5texto}" />
+          <param name="Result7" direction="out" value="${var:botaoFinalizacao1textoBotao}" />
+          <param name="Result8" direction="out" value="${var:botaoFinalizacao1enabled}" />
+          <param name="Result9" direction="out" value="${var:botaoFinalizacao1texto}" />
+          <param name="Result10" direction="out" value="${var:botaoFinalizacao1qualificacao}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step40" name="Extract XML 3" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/mensagemFinalizacao2/@textoBotao" />
+          <param name="Query2" direction="in" value="/config/mensagemFinalizacao2/@enabled" />
+          <param name="Query3" direction="in" value="/config/mensagemFinalizacao2/text()" />
+          <param name="Query4" direction="in" value="/config/mensagemFinalizacao2/@codigoQualificacao" />
+          <param name="Query5" direction="in" value="/config/mensagemFinalizacao3/@textoBotao" />
+          <param name="Query6" direction="in" value="/config/mensagemFinalizacao3/@enabled" />
+          <param name="Query7" direction="in" value="/config/mensagemFinalizacao3/text()" />
+          <param name="Query8" direction="in" value="/config/mensagemFinalizacao3/@codigoQualificacao" />
+          <param name="Result1" direction="out" value="${var:botaoFinalizacao2textoBotao}" />
+          <param name="Result2" direction="out" value="${var:botaoFinalizacao2enabled}" />
+          <param name="Result3" direction="out" value="${var:botaoFinalizacao2texto}" />
+          <param name="Result4" direction="out" value="${var:botaoFinalizacao2qualificacao}" />
+          <param name="Result5" direction="out" value="${var:botaoFinalizacao3textoBotao}" />
+          <param name="Result6" direction="out" value="${var:botaoFinalizacao3enabled}" />
+          <param name="Result7" direction="out" value="${var:botaoFinalizacao3texto}" />
+          <param name="Result8" direction="out" value="${var:botaoFinalizacao3qualificacao}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step41" name="Extract XML 4" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/mensagemFinalizacao4/@textoBotao" />
+          <param name="Query2" direction="in" value="/config/mensagemFinalizacao4/@enabled" />
+          <param name="Query3" direction="in" value="/config/mensagemFinalizacao4/text()" />
+          <param name="Query4" direction="in" value="/config/mensagemFinalizacao4/@codigoQualificacao" />
+          <param name="Query5" direction="in" value="/config/gerarProtocolo/text()" />
+          <param name="Result1" direction="out" value="${var:botaoFinalizacao4textoBotao}" />
+          <param name="Result2" direction="out" value="${var:botaoFinalizacao4enabled}" />
+          <param name="Result3" direction="out" value="${var:botaoFinalizacao4texto}" />
+          <param name="Result4" direction="out" value="${var:botaoFinalizacao4qualificacao}" />
+          <param name="Result5" direction="out" value="${var:gerarProtocolo}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step42" name="botaoFinalizacao4qualificacao" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botaoFinalizacao4qualificacao}" />
+          <param name="Value" direction="out" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step43" name="botaoFinalizacao3qualificacao" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botaoFinalizacao3qualificacao}" />
+          <param name="Value" direction="out" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step44" name="botaoFinalizacao2qualificacao" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botaoFinalizacao2qualificacao}" />
+          <param name="Value" direction="out" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step45" name="botaoFinalizacao1qualificacao" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botaoFinalizacao1qualificacao}" />
+          <param name="Value" direction="out" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step46" name="gerarProtocolo" component="Sytel.StepLibrary.SwitchStep">
+        <params>
+          <param name="Value" direction="in" value="${var:gerarProtocolo}" />
+        </params>
+        <returnValues>
+          <returnValue name="true" />
+          <returnValue name="True" />
+          <returnValue name="TRUE" />
+        </returnValues>
+      </step>
+      <step id="Step47" name="String Substitute" component="Sytel.StepLibrary.StringSubstituteStep">
+        <params>
+          <param name="InputString" direction="in" value="${var:iniMsg}" />
+          <param name="SearchString" direction="in" value="##protocolo##" />
+          <param name="ReplaceString" direction="in" value="${var:protocolo}" />
+          <param name="OutputString" direction="out" value="${var:iniMsg}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step48" name="Generate Service Protocol" component="JRCOminichannel.StepLibrary.CallQuality.GenerateServiceProtocol">
+        <params>
+          <param name="Protocol" direction="out" value="${var:protocolo}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step19" name="Extract XML 5" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/NumeroFilas/text()" />
+          <param name="Query2" direction="in" value="/config/Fila1/text()" />
+          <param name="Query3" direction="in" value="/config/Fila2/text()" />
+          <param name="Query4" direction="in" value="/config/Fila3/text()" />
+          <param name="Query5" direction="in" value="/config/Fila4/text()" />
+          <param name="Query6" direction="in" value="/config/Fila5/text()" />
+          <param name="Query7" direction="in" value="/config/Fila6/text()" />
+          <param name="Query8" direction="in" value="/config/Fila7/text()" />
+          <param name="Query9" direction="in" value="/config/Fila8/text()" />
+          <param name="Query10" direction="in" value="/config/Fila9/text()" />
+          <param name="Result1" direction="out" value="${var:NumeroFilas}" />
+          <param name="Result2" direction="out" value="${var:fila1}" />
+          <param name="Result3" direction="out" value="${var:fila2}" />
+          <param name="Result4" direction="out" value="${var:fila3}" />
+          <param name="Result5" direction="out" value="${var:fila4}" />
+          <param name="Result6" direction="out" value="${var:fila5}" />
+          <param name="Result7" direction="out" value="${var:fila6}" />
+          <param name="Result8" direction="out" value="${var:fila7}" />
+          <param name="Result9" direction="out" value="${var:fila8}" />
+          <param name="Result10" direction="out" value="${var:fila9}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step49" name="Extract XML 6" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/NumeroFilas/text()" />
+          <param name="Query2" direction="in" value="/config/Fila1/@texto" />
+          <param name="Query3" direction="in" value="/config/Fila2/@texto" />
+          <param name="Query4" direction="in" value="/config/Fila3/@texto" />
+          <param name="Query5" direction="in" value="/config/Fila4/@texto" />
+          <param name="Query6" direction="in" value="/config/Fila5/@texto" />
+          <param name="Query7" direction="in" value="/config/Fila6/@texto" />
+          <param name="Query8" direction="in" value="/config/Fila7/@texto" />
+          <param name="Query9" direction="in" value="/config/Fila8/@texto" />
+          <param name="Query10" direction="in" value="/config/Fila9/@texto" />
+          <param name="Result1" direction="out" value="${var:NumeroFilas}" />
+          <param name="Result2" direction="out" value="${var:fila1Texto}" />
+          <param name="Result3" direction="out" value="${var:fila2Texto}" />
+          <param name="Result4" direction="out" value="${var:fila3Texto}" />
+          <param name="Result5" direction="out" value="${var:fila4Texto}" />
+          <param name="Result6" direction="out" value="${var:fila5Texto}" />
+          <param name="Result7" direction="out" value="${var:fila6Texto}" />
+          <param name="Result8" direction="out" value="${var:fila7Texto}" />
+          <param name="Result9" direction="out" value="${var:fila8Texto}" />
+          <param name="Result10" direction="out" value="${var:fila9Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step50" name="Alert Monitor - Lista de Filas" component="Sytel.StepLibrary.AlertMonitor">
+        <params>
+          <param name="Message" direction="in" value="Fila1 -&gt; ${var:fila1Texto} - ${var:fila1Q}   || Fila2 -&gt; ${var:fila2Texto} - ${var:fila2Q}  || Fila3 -&gt; ${var:fila3Texto} - ${var:fila3Q}  || Fila4 -&gt; ${var:fila4Texto} - ${var:fila4Q} || Fila5 -&gt; ${var:fila5Texto} - ${var:fila5Q}  || " />
+          <param name="Severity" direction="in" value="1" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step51" name="fila1" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila1}" />
+          <param name="Value" direction="out" value="${var:fila}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step52" name="Alert Monitor - Fila " component="Sytel.StepLibrary.AlertMonitor">
+        <params>
+          <param name="Message" direction="in" value="Fila selecionada para transferencia: ${var:fila} || Qualificacao: ${var:outcome}" />
+          <param name="Severity" direction="in" value="1" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step53" name="fila2" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila2}" />
+          <param name="Value" direction="out" value="${var:fila}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step54" name="fila3" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila3}" />
+          <param name="Value" direction="out" value="${var:fila}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step55" name="fila4" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila4}" />
+          <param name="Value" direction="out" value="${var:fila}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step56" name="fila5" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila5}" />
+          <param name="Value" direction="out" value="${var:fila}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step57" name="ReQueue para Fila " component="Sytel.StepLibrary.ReQueue">
+        <params>
+          <param name="GroupAddress" direction="in" value="${var:fila}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step58" name="Extract XML 7" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/NumeroFilas/text()" />
+          <param name="Query2" direction="in" value="/config/Fila1/@enabled" />
+          <param name="Query3" direction="in" value="/config/Fila2/@enabled" />
+          <param name="Query4" direction="in" value="/config/Fila3/@enabled" />
+          <param name="Query5" direction="in" value="/config/Fila4/@enabled" />
+          <param name="Query6" direction="in" value="/config/Fila5/@enabled" />
+          <param name="Query7" direction="in" value="/config/Fila6/@enabled" />
+          <param name="Query8" direction="in" value="/config/Fila7/@enabled" />
+          <param name="Query9" direction="in" value="/config/Fila8/@enabled" />
+          <param name="Query10" direction="in" value="/config/Fila9/@enabled" />
+          <param name="Result1" direction="out" value="${var:NumeroFilas}" />
+          <param name="Result2" direction="out" value="${var:fila1Enabled}" />
+          <param name="Result3" direction="out" value="${var:fila2Enabled}" />
+          <param name="Result4" direction="out" value="${var:fila3Enabled}" />
+          <param name="Result5" direction="out" value="${var:fila4Enabled}" />
+          <param name="Result6" direction="out" value="${var:fila5Enabled}" />
+          <param name="Result7" direction="out" value="${var:fila6Enabled}" />
+          <param name="Result8" direction="out" value="${var:fila7Enabled}" />
+          <param name="Result9" direction="out" value="${var:fila8Enabled}" />
+          <param name="Result10" direction="out" value="${var:fila9Enabled}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step8" name="End Call Transaction - Outcome" component="Sytel.StepLibrary.EndCallTransaction">
+        <params>
+          <param name="AgentOutcome" direction="in" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step60" name="Alert Monitor - Codigo de transferencia" component="Sytel.StepLibrary.AlertMonitor">
+        <params>
+          <param name="Message" direction="in" value="Codigo e: ${var:outcome}" />
+          <param name="Severity" direction="in" value="1" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step61" name="botaoFinalizacaoFila5" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila5Q}" />
+          <param name="Value" direction="out" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step62" name="botaoFinalizacaoFila1" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila1Q}" />
+          <param name="Value" direction="out" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step63" name="botaoFinalizacaoFila2" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila2Q}" />
+          <param name="Value" direction="out" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step64" name="botaoFinalizacaoFila3" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila3Q}" />
+          <param name="Value" direction="out" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step65" name="botaoFinalizacaoFila4" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:fila4Q}" />
+          <param name="Value" direction="out" value="${var:outcome}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step66" name="Extract XML 8" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/DataSources/DataSource[@id='contatos']/@name" />
+          <param name="Query2" direction="in" value="/config/DataSources/DataSource[@id='contatos']/@user&#xA;" />
+          <param name="Query3" direction="in" value="/config/DataSources/DataSource[@id='contatos']/@pass&#xA;" />
+          <param name="Query4" direction="in" value="/config/DataSources/DataSource[@id='contatos']/@table&#xA;" />
+          <param name="Result1" direction="out" value="${var:db_dsn}" />
+          <param name="Result2" direction="out" value="${var:db_user}" />
+          <param name="Result3" direction="out" value="${var:db_pass}" />
+          <param name="Result4" direction="out" value="${var:db_table}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step67" name="Execute SQL Select" component="Sytel.StepLibrary.ExecuteSqlSelect">
+        <params>
+          <param name="SelectStatement" direction="in" value="delete from ${var:db_table} where contact = '${sys:CustomerPhone}'&#xA;" />
+          <param name="Result" direction="out" value="${var:db_result}" />
+          <param name="DataSourceName" direction="in" value="${var:db_dsn}" />
+          <param name="DataSourceUser" direction="in" value="${var:db_user}&#xA;" />
+          <param name="DataSourcePassword" direction="in" value="${var:db_pass}&#xA;" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step68" name="Extract XML 8" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/NumeroFilas/text()" />
+          <param name="Query2" direction="in" value="/config/Fila1/@codQ" />
+          <param name="Query3" direction="in" value="/config/Fila2/@codQ" />
+          <param name="Query4" direction="in" value="/config/Fila3/@codQ" />
+          <param name="Query5" direction="in" value="/config/Fila4/@codQ" />
+          <param name="Query6" direction="in" value="/config/Fila5/@codQ" />
+          <param name="Query7" direction="in" value="/config/Fila6/@codQ" />
+          <param name="Result1" direction="out" value="${var:NumeroFilas}" />
+          <param name="Result2" direction="out" value="${var:fila1Q}" />
+          <param name="Result3" direction="out" value="${var:fila2Q}" />
+          <param name="Result4" direction="out" value="${var:fila3Q}" />
+          <param name="Result5" direction="out" value="${var:fila4Q}" />
+          <param name="Result6" direction="out" value="${var:fila5Q}" />
+          <param name="Result7" direction="out" value="${var:fila6Q}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step59" name="Extract XML 10" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/mensagemRapida6/@textoBotao" />
+          <param name="Query2" direction="in" value="/config/mensagemRapida6/@enabled" />
+          <param name="Query3" direction="in" value="/config/mensagemRapida6/text()" />
+          <param name="Query4" direction="in" value="/config/mensagemRapida7/@textoBotao" />
+          <param name="Query5" direction="in" value="/config/mensagemRapida7/@enabled" />
+          <param name="Query6" direction="in" value="/config/mensagemRapida7/text()" />
+          <param name="Query7" direction="in" value="/config/mensagemRapida8/@textoBotao" />
+          <param name="Query8" direction="in" value="/config/mensagemRapida8/@enabled" />
+          <param name="Query9" direction="in" value="/config/mensagemRapida8/text()" />
+          <param name="Result1" direction="out" value="${var:botao6textoBotao}" />
+          <param name="Result2" direction="out" value="${var:botao6enabled}" />
+          <param name="Result3" direction="out" value="${var:botao6texto}" />
+          <param name="Result4" direction="out" value="${var:botao7textoBotao}" />
+          <param name="Result5" direction="out" value="${var:botao7enabled}" />
+          <param name="Result6" direction="out" value="${var:botao7texto}" />
+          <param name="Result7" direction="out" value="${var:botao8textoBotao}" />
+          <param name="Result8" direction="out" value="${var:botao8enabled}" />
+          <param name="Result9" direction="out" value="${var:botao8texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step69" name="Extract XML 11" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:configXML}" />
+          <param name="Query1" direction="in" value="/config/mensagemRapida9/@textoBotao" />
+          <param name="Query2" direction="in" value="/config/mensagemRapida9/@enabled" />
+          <param name="Query3" direction="in" value="/config/mensagemRapida9/text()" />
+          <param name="Query4" direction="in" value="/config/mensagemRapida10/@textoBotao" />
+          <param name="Query5" direction="in" value="/config/mensagemRapida10/@enabled" />
+          <param name="Query6" direction="in" value="/config/mensagemRapida10/text()" />
+          <param name="Result1" direction="out" value="${var:botao9textoBotao}" />
+          <param name="Result2" direction="out" value="${var:botao9enabled}" />
+          <param name="Result3" direction="out" value="${var:botao9texto}" />
+          <param name="Result4" direction="out" value="${var:botao10textoBotao}" />
+          <param name="Result5" direction="out" value="${var:botao10enabled}" />
+          <param name="Result6" direction="out" value="${var:botao10texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step70" name="Set texto botao 6" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao6texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step71" name="Set texto botao 7" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao7texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step72" name="Set texto botao 8" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao8texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step73" name="Set texto botao 9" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao9texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step74" name="Set texto botao 10" component="Sytel.StepLibrary.SimpleAssign">
+        <params>
+          <param name="Value" direction="in" value="${var:botao10texto}" />
+          <param name="Value" direction="out" value="${var:Texto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step99" name="Alert Monitor Mocchi Data" component="Sytel.StepLibrary.AlertMonitor">
+        <params>
+          <param name="Message" direction="in" value="MOCCHI_DATA=${cam:data}" />
+          <param name="Facility" direction="in" value="SCR2" />
+          <param name="Severity" direction="in" value="2" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step100" name="Mocchi JSON Parse 1" component="JRCOminichannel.StepLibrary.JSONMultiplePath">
+        <params>
+          <param name="jsonDoc" direction="in" value="${cam:data}" />
+          <param name="path1" direction="in" value="$.origem_bot" />
+          <param name="path2" direction="in" value="$.tipo_contexto" />
+          <param name="path3" direction="in" value="$.exibir_screen_pop" />
+          <param name="path4" direction="in" value="$.nome_cliente" />
+          <param name="path5" direction="in" value="$.empresa_cliente" />
+          <param name="path6" direction="in" value="$.telefone_cliente" />
+          <param name="path7" direction="in" value="$.email_cliente" />
+          <param name="path8" direction="in" value="$.produto_principal" />
+          <param name="PathValue1" direction="out" value="${var:mocchiOrigemBot}" />
+          <param name="PathValue2" direction="out" value="${var:mocchiTipoContexto}" />
+          <param name="PathValue3" direction="out" value="${var:mocchiExibirScreenPop}" />
+          <param name="PathValue4" direction="out" value="${var:mocchiNome}" />
+          <param name="PathValue5" direction="out" value="${var:mocchiEmpresa}" />
+          <param name="PathValue6" direction="out" value="${var:mocchiTelefone}" />
+          <param name="PathValue7" direction="out" value="${var:mocchiEmail}" />
+          <param name="PathValue8" direction="out" value="${var:mocchiProduto}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step101" name="Mocchi JSON Parse 2" component="JRCOminichannel.StepLibrary.JSONMultiplePath">
+        <params>
+          <param name="jsonDoc" direction="in" value="${cam:data}" />
+          <param name="path1" direction="in" value="$.plano_sugerido" />
+          <param name="path2" direction="in" value="$.produtos_interesse" />
+          <param name="path3" direction="in" value="$.recursos_interesse" />
+          <param name="path4" direction="in" value="$.canais_interesse" />
+          <param name="path5" direction="in" value="$.quantidade_atendentes" />
+          <param name="path6" direction="in" value="$.quantidade_ramais" />
+          <param name="path7" direction="in" value="$.quantidade_usuarios" />
+          <param name="path8" direction="in" value="$.volume_mensal" />
+          <param name="PathValue1" direction="out" value="${var:mocchiPlano}" />
+          <param name="PathValue2" direction="out" value="${var:mocchiProdutos}" />
+          <param name="PathValue3" direction="out" value="${var:mocchiRecursos}" />
+          <param name="PathValue4" direction="out" value="${var:mocchiCanais}" />
+          <param name="PathValue5" direction="out" value="${var:mocchiAtendentes}" />
+          <param name="PathValue6" direction="out" value="${var:mocchiRamais}" />
+          <param name="PathValue7" direction="out" value="${var:mocchiUsuarios}" />
+          <param name="PathValue8" direction="out" value="${var:mocchiVolume}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step102" name="Mocchi JSON Parse 3" component="JRCOminichannel.StepLibrary.JSONMultiplePath">
+        <params>
+          <param name="jsonDoc" direction="in" value="${cam:data}" />
+          <param name="path1" direction="in" value="$.tipo_operacao" />
+          <param name="path2" direction="in" value="$.solucao_atual" />
+          <param name="path3" direction="in" value="$.dor_principal" />
+          <param name="path4" direction="in" value="$.integracoes_desejadas" />
+          <param name="path5" direction="in" value="$.prazo" />
+          <param name="path6" direction="in" value="$.lead_tier" />
+          <param name="path7" direction="in" value="$.urgencia" />
+          <param name="path8" direction="in" value="$.prioridade" />
+          <param name="PathValue1" direction="out" value="${var:mocchiTipoOperacao}" />
+          <param name="PathValue2" direction="out" value="${var:mocchiSolucaoAtual}" />
+          <param name="PathValue3" direction="out" value="${var:mocchiDor}" />
+          <param name="PathValue4" direction="out" value="${var:mocchiIntegracoes}" />
+          <param name="PathValue5" direction="out" value="${var:mocchiPrazo}" />
+          <param name="PathValue6" direction="out" value="${var:mocchiTier}" />
+          <param name="PathValue7" direction="out" value="${var:mocchiUrgencia}" />
+          <param name="PathValue8" direction="out" value="${var:mocchiPrioridade}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step103" name="Mocchi JSON Parse 4" component="JRCOminichannel.StepLibrary.JSONMultiplePath">
+        <params>
+          <param name="jsonDoc" direction="in" value="${cam:data}" />
+          <param name="path1" direction="in" value="$.intencao_usuario" />
+          <param name="path2" direction="in" value="$.resumo_sdr" />
+          <param name="path3" direction="in" value="$.conversation_id" />
+          <param name="path4" direction="in" value="$.message_id" />
+          <param name="PathValue1" direction="out" value="${var:mocchiIntencao}" />
+          <param name="PathValue2" direction="out" value="${var:mocchiResumo}" />
+          <param name="PathValue3" direction="out" value="${var:mocchiConversationId}" />
+          <param name="PathValue4" direction="out" value="${var:mocchiMessageId}" />
+        </params>
+        <returnValues />
+      </step>
+    </steps>
+  </stepSection>
+  <diagramSection>
+    <diagramSteps>
+      <diagramStep logicID="Logic1" position="(32,-527)" />
+      <diagramStep logicID="Logic2" position="(1194,697)" />
+      <diagramStep logicID="Logic6" position="(1195,245)" />
+      <diagramStep logicID="Logic7" position="(262,776)" />
+      <diagramStep logicID="Logic12" position="(604,491)" />
+      <diagramStep logicID="Logic13" position="(952,286)" />
+      <diagramStep logicID="Logic15" position="(1119,-32)" />
+      <diagramStep logicID="Logic16" position="(937,42)" />
+      <diagramStep logicID="Logic17" position="(1329,57)" />
+      <diagramStep logicID="Logic18" position="(1195,427)" />
+      <diagramStep logicID="Logic20" position="(-149,774)" />
+      <diagramStep logicID="Logic21" position="(-262,40)" />
+      <diagramStep logicID="Logic22" position="(627,-97)" />
+      <diagramStep logicID="Logic23" position="(745,139)" />
+      <diagramStep logicID="Logic24" position="(626,68)" />
+      <diagramStep logicID="Logic25" position="(563,260)" />
+      <diagramStep logicID="Logic26" position="(418,383)" />
+      <diagramStep logicID="Logic27" position="(-8,261)" />
+      <diagramStep logicID="Logic28" position="(-9,328)" />
+      <diagramStep logicID="Logic29" position="(-10,396)" />
+      <diagramStep logicID="Logic30" position="(-10,529)" />
+      <diagramStep logicID="Logic31" position="(-10,462)" />
+      <diagramStep logicID="Logic4" position="(302,-526)" />
+      <diagramStep logicID="Logic5" position="(81,-430)" />
+      <diagramStep logicID="Logic9" position="(246,-100)" />
+      <diagramStep logicID="Logic10" position="(-386,-45)" />
+      <diagramStep logicID="Logic11" position="(-287,161)" />
+      <diagramStep logicID="Logic14" position="(-153,249)" />
+      <diagramStep logicID="Logic32" position="(-390,572)" />
+      <diagramStep logicID="Logic33" position="(-392,461)" />
+      <diagramStep logicID="Logic34" position="(-382,-155)" />
+      <diagramStep logicID="Logic35" position="(89,-264)" />
+      <diagramStep logicID="Logic36" position="(-112,-267)" />
+      <diagramStep logicID="Logic37" position="(-118,-55)" />
+      <diagramStep logicID="Logic38" position="(2,-155)" />
+      <diagramStep logicID="Logic39" position="(269,-430)" />
+      <diagramStep logicID="Logic40" position="(448,-430)" />
+      <diagramStep logicID="Logic41" position="(623,-429)" />
+      <diagramStep logicID="Logic42" position="(469,-102)" />
+      <diagramStep logicID="Logic43" position="(624,-18)" />
+      <diagramStep logicID="Logic44" position="(561,176)" />
+      <diagramStep logicID="Logic45" position="(442,303)" />
+      <diagramStep logicID="Logic46" position="(792,-235)" />
+      <diagramStep logicID="Logic47" position="(263,-262)" />
+      <diagramStep logicID="Logic48" position="(569,-264)" />
+      <diagramStep logicID="Logic19" position="(793,-428)" />
+      <diagramStep logicID="Logic49" position="(950,-427)" />
+      <diagramStep logicID="Logic50" position="(991,-240.1)" />
+      <diagramStep logicID="Logic51" position="(-882,30)" />
+      <diagramStep logicID="Logic52" position="(-759,446.8)" />
+      <diagramStep logicID="Logic53" position="(-721,65)" />
+      <diagramStep logicID="Logic54" position="(-637,136)" />
+      <diagramStep logicID="Logic55" position="(-562,199)" />
+      <diagramStep logicID="Logic56" position="(-431,241)" />
+      <diagramStep logicID="Logic57" position="(-584,447.3998)" />
+      <diagramStep logicID="Logic58" position="(1097,-427)" />
+      <diagramStep logicID="Logic8" position="(-570,619)" />
+      <diagramStep logicID="Logic60" position="(-725,565.8)" />
+      <diagramStep logicID="Logic61" position="(-460,352.65)" />
+      <diagramStep logicID="Logic62" position="(-891,155)" />
+      <diagramStep logicID="Logic63" position="(-760,206)" />
+      <diagramStep logicID="Logic64" position="(-673,268)" />
+      <diagramStep logicID="Logic65" position="(-572,318)" />
+      <diagramStep logicID="Logic66" position="(1244,-334)" />
+      <diagramStep logicID="Logic67" position="(1211,-243.6003)" />
+      <diagramStep logicID="Logic68" position="(1254,-426.2001)" />
+      <diagramStep logicID="Logic59" position="(1057,-330)" />
+      <diagramStep logicID="Logic69" position="(885,-327)" />
+      <diagramStep logicID="Logic70" position="(-6,595)" />
+      <diagramStep logicID="Logic71" position="(-2,667)" />
+      <diagramStep logicID="Logic72" position="(128,606)" />
+      <diagramStep logicID="Logic73" position="(157,678)" />
+      <diagramStep logicID="Logic74" position="(300,621)" />
+      <diagramStep logicID="Logic75" position="(100,600)" />
+      <diagramStep logicID="Logic76" position="(100,650)" />
+      <diagramStep logicID="Logic77" position="(100,700)" />
+      <diagramStep logicID="Logic78" position="(100,750)" />
+      <diagramStep logicID="Logic79" position="(100,800)" />
+      <diagramStep logicID="Logic3" position="(242,116)" />
+    </diagramSteps>
+  </diagramSection>
+</scriptInstance>

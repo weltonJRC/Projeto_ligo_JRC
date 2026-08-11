@@ -1,0 +1,34 @@
+<config>
+	<DataSources>
+		<DataSource id = "contatos" name = "base_grupojrc" user = "base_grupojrc" pass = "jRC-1qaz@" table = "whats_agencia"/>
+	</DataSources>
+	
+	<!-- para não enviar mensagem de inicio basta deixar em branco (sem espaços) -->
+	<iniMsg>Olá tudo bem? Seja bem vindo(a) ao atendimento da JRC. Me chamo ##nomeAgente##, é um prazer lhe atender! O protocolo deste atendimento é ##protocolo##.</iniMsg>
+	<gerarProtocolo>true</gerarProtocolo>
+	<mensagemRapida1 textoBotao = "Bom dia" enabled="true">Bom dia! Em que posso te ajudar?</mensagemRapida1>
+	<mensagemRapida2 textoBotao = "Boa tarde" enabled="true">Boa tarde! Em que posso te ajudar?</mensagemRapida2>
+	<mensagemRapida3 textoBotao = "Disponha" enabled="true">Disponha. Tenha um ótimo dia</mensagemRapida3>
+	<mensagemRapida4 textoBotao = "-" enabled="false">INATIVO</mensagemRapida4>
+	<mensagemRapida5 textoBotao = "-" enabled="false">INATIVO</mensagemRapida5>
+	<mensagemRapida6 textoBotao = "-" enabled="false">INATIVO</mensagemRapida6>
+	<mensagemRapida7 textoBotao = "-" enabled="false">INATIVO</mensagemRapida7>
+	<mensagemRapida8 textoBotao = "-" enabled="false">INATIVO</mensagemRapida8>
+	<mensagemRapida9 textoBotao = "-" enabled="false">INATIVO</mensagemRapida9>
+	<mensagemRapida10 textoBotao = "ALERTA 3 MINUTOS" enabled="false">Olá, você está por aí? Nosso chat será encerrado em breve, por inatividade. Caso ainda esteja por aí, só avisar!</mensagemRapida10>
+	<mensagemFinalizacao1 textoBotao = "ENCERRAMENTO" enabled = "true" codigoQualificacao="370">Obrigada por escolher a JRC. Nossos demais canais de atendimentos permanecem disponíveis! </mensagemFinalizacao1>
+	<mensagemFinalizacao2 textoBotao = "ENCERRAMENTO INATIVIDADE" enabled = "true" codigoQualificacao="226">Olá, por falta de interatividade, esse chat foi encerrado. Caso ainda precise de algo, nos acione novamente.</mensagemFinalizacao2>
+	<mensagemFinalizacao3 textoBotao = "-" enabled = "false" codigoQualificacao="306">INATIVO</mensagemFinalizacao3>
+	<mensagemFinalizacao4 textoBotao = "-" enabled = "false" codigoQualificacao="306">INATIVO</mensagemFinalizacao4>
+
+
+	<NumeroFilas>5</NumeroFilas>		<!-- Nao esta funcionando por enquanto. -->
+			
+	<Fila1 texto = "CXM" enabled = "true" codQ="203">fila_pos_whats</Fila1>
+	<Fila2 texto = "Construtora" enabled = "true" codQ="204" >fila_construtora</Fila2>						
+	<Fila3 texto = "INATIVO" enabled = "false" codQ="370">INATIVO</Fila3>						
+	<Fila4 texto = "INATIVO" enabled = "false" codQ="370" >INATIVO</Fila4>
+	<Fila5 texto = "INATIVO" enabled = "false" codQ="370" >INATIVO</Fila5>
+	<Fila6>-</Fila6>
+	<Fila7>-</Fila7>	
+</config>

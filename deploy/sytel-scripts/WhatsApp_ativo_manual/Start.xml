@@ -1,0 +1,309 @@
+﻿<?xml version="1.0"?>
+<scriptInstance xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Start" subscript="false" xmlns="http://sytelco.com/schemas/scripter2/script.xsd">
+  <assemblySection>
+    <assemblies>
+      <assembly content="steps">Screens.dll</assembly>
+      <assembly content="steps">Sytel.StepLibrary.dll</assembly>
+      <assembly content="steps">Sytel.TextProcessing.dll</assembly>
+    </assemblies>
+  </assemblySection>
+  <interfaceSection>
+    <interfaceParameters />
+  </interfaceSection>
+  <dataSection>
+    <variables>
+      <variable name="config" default="" />
+      <variable name="url" default="" />
+      <variable name="template" default="" />
+      <variable name="httpResult" default="" />
+      <variable name="numberchip" default="" />
+      <variable name="getTemplatesUrl" default="" />
+      <variable name="templateCollection" default="" />
+      <variable name="phrase" default="" />
+      <variable name="telefone" default="" />
+      <variable name="templatexml" default="" />
+      <variable name="var1" default="" />
+      <variable name="var2" default="" />
+    </variables>
+  </dataSection>
+  <campaignSection>
+    <campaignFields />
+  </campaignSection>
+  <imagesSection>
+    <images />
+  </imagesSection>
+  <logicSection entryPoint="Logic1">
+    <logicElements>
+      <logicElement index="Logic1" stepID="Step1">
+        <outcomes>
+          <outcome name="Next" map="Logic5" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic2" stepID="Step2">
+        <outcomes />
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic3" stepID="Step3">
+        <outcomes>
+          <outcome name="Success" map="Logic6" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic6" code="" field="" capture="false" />
+          <outcome name="TimeOut" map="Logic6" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic4" stepID="Step4">
+        <outcomes>
+          <outcome name="Next" map="Logic7" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic7" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic5" stepID="Step5">
+        <outcomes>
+          <outcome name="Next" map="Logic4" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic4" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic8" stepID="Step8">
+        <outcomes>
+          <outcome name="Next" map="Logic14" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic9" stepID="Step9">
+        <outcomes>
+          <outcome name="Failed" map="Logic17" code="" field="" capture="false" />
+          <outcome name="Next" map="Logic17" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic6" stepID="Step6">
+        <outcomes>
+          <outcome name="Next" map="Logic8" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic8" code="" field="" capture="false" />
+          <outcome name="Call Ended" map="Logic8" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic7" stepID="Step7">
+        <outcomes>
+          <outcome name="Success" map="Logic10" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic10" code="" field="" capture="false" />
+          <outcome name="TimeOut" map="Logic10" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic10" stepID="Step10">
+        <outcomes>
+          <outcome name="Next" map="Logic11" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic11" stepID="Step11">
+        <outcomes>
+          <outcome name="Enviar" map="Logic9" code="" field="" capture="false" />
+          <outcome name="Cancelar" map="Logic2" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic12" stepID="Step12">
+        <outcomes>
+          <outcome name="Next" map="Logic15" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic15" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic13" stepID="Step13">
+        <outcomes>
+          <outcome name="Next" map="Logic12" code="" field="" capture="false" />
+          <outcome name="Fail" map="Logic12" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic14" stepID="Step14">
+        <outcomes>
+          <outcome name="Next" map="Logic2" code="" field="" capture="false" />
+          <outcome name="Failed" map="Logic2" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic15" stepID="Step15">
+        <outcomes>
+          <outcome name="Next" map="Logic16" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic16" stepID="Step16">
+        <outcomes>
+          <outcome name="Next" map="Logic3" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+      <logicElement index="Logic17" stepID="Step17">
+        <outcomes>
+          <outcome name="Next" map="Logic13" code="" field="" capture="false" />
+          <outcome name="Call Ended" map="Logic13" code="" field="" capture="false" />
+        </outcomes>
+        <copyOutcome action="none" />
+      </logicElement>
+    </logicElements>
+  </logicSection>
+  <stepSection>
+    <steps>
+      <step id="Step1" name="Start Script" component="Sytel.StepLibrary.StartScript">
+        <params />
+        <returnValues />
+      </step>
+      <step id="Step2" name="Exit Script" component="Sytel.StepLibrary.ExitScript">
+        <params>
+          <param name="ExitCode" direction="in" value="ok" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step3" name="HTTP Request" component="Sytel.StepLibrary.HttpRequest">
+        <params>
+          <param name="Url" direction="in" value="${var:url}?numberchip=${var:numberchip}&amp;template=${var:template}&amp;destination=${var:telefone}&amp;field1=${var:var1}&amp;field2=${var:var2}" />
+          <param name="ResultText" direction="out" value="${var:httpResult}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step4" name="Extract XML" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:config}" />
+          <param name="Query1" direction="in" value="/config/numberchip/text()" />
+          <param name="Query2" direction="in" value="/config/url/text()" />
+          <param name="Query4" direction="in" value="/config/getTemplatesUrl/text()" />
+          <param name="Result1" direction="out" value="${var:numberchip}" />
+          <param name="Result2" direction="out" value="${var:url}" />
+          <param name="Result4" direction="out" value="${var:getTemplatesUrl}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step5" name="Read Text File" component="Sytel.StepLibrary.ReadTextFile">
+        <params>
+          <param name="Contents" direction="out" value="${var:config}" />
+          <param name="FileName" direction="in" value="config.xml" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step8" name="Alert Monitor" component="Sytel.StepLibrary.AlertMonitor">
+        <params>
+          <param name="Message" direction="in" value="${var:url}?numberchip=${var:numberchip}&amp;template=${var:template}&amp;destination=${var:telefone}&amp;field1=${var:var1}&amp;field2=${var:var2}&#xA;" />
+          <param name="Facility" direction="in" value="Scripter2" />
+          <param name="Severity" direction="in" value="2" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step9" name="Send SDMP Message" component="Sytel.StepLibrary.SendSDMP">
+        <params>
+          <param name="FullMessage" direction="in" value="CG:CA:MC\TD${sys:TenantID}\CN${sys:CampaignName}\SI${sys:NewGUID}\TN${var:telefone}\MSChat\AN${sys:AgentName}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step6" name="Send Chat To Customer" component="Sytel.TextProcessing.SendChatToCustomer">
+        <params>
+          <param name="CustomerID" direction="in" value="${var:telefone}" />
+          <param name="MessageText" direction="in" value="${var:phrase}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step7" name="HTTP Request" component="Sytel.StepLibrary.HttpRequest">
+        <params>
+          <param name="Url" direction="in" value="${var:getTemplatesUrl}?numberchip=${var:numberchip}" />
+          <param name="ResultText" direction="out" value="${var:templateCollection}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step10" name="Alert Monitor" component="Sytel.StepLibrary.AlertMonitor">
+        <params>
+          <param name="Message" direction="in" value="getTemplatesUrl ${var:getTemplatesUrl}?numberchip=${var:numberchip}" />
+          <param name="Facility" direction="in" value="Scripter2" />
+          <param name="Severity" direction="in" value="2" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step11" name="TemplateSelector" component="Screens.TemplateSelector">
+        <params>
+          <param name="ComboTemplate_Collection" direction="in" value="${var:templateCollection}" />
+          <param name="ComboTemplate_Collection" direction="out" value="${var:templateCollection}" />
+          <param name="ComboTemplate_Selection" direction="in" value="${var:templatexml}" />
+          <param name="ComboTemplate_Selection" direction="out" value="${var:templatexml}" />
+          <param name="phone" direction="in" value="${var:telefone}" />
+          <param name="phone" direction="out" value="${var:telefone}" />
+          <param name="campo1" direction="in" value="${var:var1}" />
+          <param name="campo1" direction="out" value="${var:var1}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step12" name="Extract XML" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:templateCollection}" />
+          <param name="Query1" direction="in" value="/collection/entries/entry[@key=&quot;${var:template}&quot;]/text()" />
+          <param name="Result1" direction="out" value="${var:phrase}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step13" name="Extract XML" component="Sytel.StepLibrary.ExtractXml">
+        <params>
+          <param name="doc" direction="in" value="${var:templatexml}" />
+          <param name="Query1" direction="in" value="/selection/items/item/text()" />
+          <param name="Result1" direction="out" value="${var:template}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step14" name="End Call Transaction" component="Sytel.StepLibrary.EndCallTransaction">
+        <params>
+          <param name="AgentOutcome" direction="in" value="105" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step15" name="String Substitute" component="Sytel.StepLibrary.StringSubstituteStep">
+        <params>
+          <param name="InputString" direction="in" value="${var:phrase}" />
+          <param name="SearchString" direction="in" value="CAMPO_1" />
+          <param name="ReplaceString" direction="in" value="${var:var1}" />
+          <param name="OutputString" direction="out" value="${var:phrase}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step16" name="String Substitute" component="Sytel.StepLibrary.StringSubstituteStep">
+        <params>
+          <param name="InputString" direction="in" value="${var:phrase}" />
+          <param name="SearchString" direction="in" value="CAMPO_2" />
+          <param name="ReplaceString" direction="in" value="${var:var2}" />
+          <param name="OutputString" direction="out" value="${var:phrase}" />
+        </params>
+        <returnValues />
+      </step>
+      <step id="Step17" name="Pause" component="Sytel.StepLibrary.PauseStep">
+        <params>
+          <param name="Interval" direction="in" value="1" />
+        </params>
+        <returnValues />
+      </step>
+    </steps>
+  </stepSection>
+  <diagramSection>
+    <diagramSteps>
+      <diagramStep logicID="Logic1" position="(80,30)" />
+      <diagramStep logicID="Logic2" position="(88,610)" />
+      <diagramStep logicID="Logic3" position="(246,261)" />
+      <diagramStep logicID="Logic4" position="(86,257)" />
+      <diagramStep logicID="Logic5" position="(84,147)" />
+      <diagramStep logicID="Logic8" position="(86,489)" />
+      <diagramStep logicID="Logic9" position="(661,453.2)" />
+      <diagramStep logicID="Logic6" position="(251,416)" />
+      <diagramStep logicID="Logic7" position="(377,143)" />
+      <diagramStep logicID="Logic10" position="(653,126)" />
+      <diagramStep logicID="Logic11" position="(852,464)" />
+      <diagramStep logicID="Logic12" position="(458,357.6)" />
+      <diagramStep logicID="Logic13" position="(469,210.6)" />
+      <diagramStep logicID="Logic14" position="(-111,528.4)" />
+      <diagramStep logicID="Logic15" position="(479,466.4)" />
+      <diagramStep logicID="Logic16" position="(485,613.4)" />
+      <diagramStep logicID="Logic17" position="(631,335.4)" />
+    </diagramSteps>
+  </diagramSection>
+</scriptInstance>

@@ -1,0 +1,6 @@
+<config>
+	<DataSources>
+		<DataSource id = "contatos" name = "base_grupojrc" user = "base_grupojrc" pass = "jRC-1qaz@" table = "whats_agencia"/>
+	</DataSources>
+	<defaultQueue>fila_agencia</defaultQueue>
+</config>
