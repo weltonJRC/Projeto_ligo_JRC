@@ -1,8 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <config>
-	<URL>http://localhost:5000/softdial/Whats_New_API_whatsapp_ativo/SendWhatsAppOutboundTemplate</URL>
-	<getTemplatesUrl>https://ccsomni.oc-jrc.com.br/softdial/Whats_New_API_whatsapp_ativo/GetWhatsAppOutboundTemplatesCollection</getTemplatesUrl>
+	<url>http://localhost/softdial/Whats_New_API_whatsapp_ativo/SendWhatsAppOutboundTemplate</url>
+	<getTemplatesUrl>http://localhost/softdial/Whats_New_API_whatsapp_ativo/GetWhatsAppOutboundTemplatesCollection</getTemplatesUrl>
 	<numberchip>551148004100</numberchip>
 	<template>65f9dbce1fb4e9ac773bd386</template>
-	
 </config>

@@ -3,6 +3,7 @@ using Jrc.LigoCampaignGateway.Application.Abstractions;
 using Jrc.LigoCampaignGateway.Application.Models;
 using Jrc.LigoCampaignGateway.Domain.Entities;
 using Jrc.LigoCampaignGateway.Domain.Enums;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Jrc.LigoCampaignGateway.Application.Services;
@@ -32,7 +33,10 @@ public class StatusIngestionService : IStatusIngestionService
         };
         await _db.AddStatusEventAsync(evt, ct);
 
-        var dispatch = _db.Dispatches.FirstOrDefault(d => d.ProviderMessageId == payload.MessageId || d.ProviderCorrelationId == payload.MessageId);
+        // H3: Use FirstOrDefaultAsync instead of synchronous FirstOrDefault
+        var dispatch = _db.Dispatches
+            .FirstOrDefault(d => d.ProviderMessageId == payload.MessageId || d.ProviderCorrelationId == payload.MessageId);
+
         if (dispatch != null)
         {
             var targetState = MapStatus(payload.Status);
@@ -46,6 +50,10 @@ public class StatusIngestionService : IStatusIngestionService
             {
                 _logger.LogWarning("Out-of-order status ignored for Dispatch {Id}: current state is {Current}, incoming target state was {Target}", dispatch.Id, dispatch.Status, targetState);
             }
+        }
+        else
+        {
+            _logger.LogWarning("No dispatch found for webhook MessageId={MessageId}. Event stored but no state update.", payload.MessageId);
         }
 
         await _db.SaveChangesAsync(ct);

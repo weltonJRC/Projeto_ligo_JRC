@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <scriptInstance xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Start" subscript="false" xmlns="http://sytelco.com/schemas/scripter2/script.xsd">
   <assemblySection>
     <assemblies>
@@ -24,10 +24,13 @@
       <variable name="templatexml" default="" />
       <variable name="var1" default="" />
       <variable name="var2" default="" />
+      <variable name="campaignRunId" default="2026-08" />
     </variables>
   </dataSection>
   <campaignSection>
-    <campaignFields />
+    <campaignFields>
+      <campaignField name="id" default="" />
+    </campaignFields>
   </campaignSection>
   <imagesSection>
     <images />
@@ -164,7 +167,7 @@
       </step>
       <step id="Step3" name="HTTP Request" component="Sytel.StepLibrary.HttpRequest">
         <params>
-          <param name="Url" direction="in" value="${var:url}?numberchip=${var:numberchip}&amp;template=${var:template}&amp;destination=${var:telefone}&amp;field1=${var:var1}&amp;field2=${var:var2}" />
+          <param name="Url" direction="in" value="${var:url}?numberchip=${var:numberchip}&amp;template=${var:template}&amp;destination=${var:telefone}&amp;field1=${var:var1}&amp;field2=${var:var2}&amp;recordId=${cam:id}&amp;campaignRunId=${var:campaignRunId}" />
           <param name="ResultText" direction="out" value="${var:httpResult}" />
         </params>
         <returnValues />
@@ -190,7 +193,7 @@
       </step>
       <step id="Step8" name="Alert Monitor" component="Sytel.StepLibrary.AlertMonitor">
         <params>
-          <param name="Message" direction="in" value="${var:url}?numberchip=${var:numberchip}&amp;template=${var:template}&amp;destination=${var:telefone}&amp;field1=${var:var1}&amp;field2=${var:var2}&#xA;" />
+          <param name="Message" direction="in" value="${var:url}?numberchip=${var:numberchip}&amp;template=${var:template}&amp;destination=${var:telefone}&amp;field1=${var:var1}&amp;field2=${var:var2}&amp;recordId=${cam:id}&amp;campaignRunId=${var:campaignRunId}" />
           <param name="Facility" direction="in" value="Scripter2" />
           <param name="Severity" direction="in" value="2" />
         </params>

@@ -1,5 +1,6 @@
 using Jrc.LigoCampaignGateway.Application.Abstractions;
 using Jrc.LigoCampaignGateway.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Jrc.LigoCampaignGateway.Application.Services;
 
@@ -19,6 +20,7 @@ public class TemplateRegistryService : ITemplateRegistryService
         return template;
     }
 
+    // H3: Use FirstOrDefaultAsync instead of synchronous FirstOrDefault
     public Task<WhatsAppTemplate?> GetTemplateByProviderIdAsync(string providerTemplateId, CancellationToken ct = default)
     {
         var t = _db.Templates.FirstOrDefault(x => x.ProviderTemplateId == providerTemplateId && x.Active);

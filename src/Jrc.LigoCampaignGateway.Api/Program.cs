@@ -128,7 +128,7 @@ using (var scope = app.Services.CreateScope())
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-if (app.Environment.IsDevelopment() || true)
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

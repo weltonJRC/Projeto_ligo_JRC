@@ -40,6 +40,10 @@ public class AppDbContext : DbContext, IAppDbContext
 
         modelBuilder.Entity<MediaAsset>()
             .HasIndex(a => a.Sha256);
+
+        // M4: Index for webhook lookups by ProviderMessageId (prevents full table scan)
+        modelBuilder.Entity<MessageDispatch>()
+            .HasIndex(d => d.ProviderMessageId);
     }
 
     public async Task AddTemplateAsync(WhatsAppTemplate template, CancellationToken ct = default)

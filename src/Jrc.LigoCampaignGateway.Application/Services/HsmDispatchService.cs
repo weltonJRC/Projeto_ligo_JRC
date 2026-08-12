@@ -4,6 +4,8 @@ using Jrc.LigoCampaignGateway.Application.Abstractions;
 using Jrc.LigoCampaignGateway.Application.Models;
 using Jrc.LigoCampaignGateway.Domain.Entities;
 using Jrc.LigoCampaignGateway.Domain.Enums;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace Jrc.LigoCampaignGateway.Application.Services;
@@ -14,6 +16,7 @@ public class HsmDispatchService : IHsmDispatchService
     private readonly ITemplateRegistryService _templateService;
     private readonly IMediaLeaseService _mediaLeaseService;
     private readonly ILigoHsmClient _hsmClient;
+    private readonly IConfiguration _config;
     private readonly ILogger<HsmDispatchService> _logger;
 
     public HsmDispatchService(
@@ -21,19 +24,22 @@ public class HsmDispatchService : IHsmDispatchService
         ITemplateRegistryService templateService,
         IMediaLeaseService mediaLeaseService,
         ILigoHsmClient hsmClient,
+        IConfiguration config,
         ILogger<HsmDispatchService> logger)
     {
         _db = db;
         _templateService = templateService;
         _mediaLeaseService = mediaLeaseService;
         _hsmClient = hsmClient;
+        _config = config;
         _logger = logger;
     }
 
     public async Task<OutboundHsmResponse> DispatchHsmAsync(OutboundHsmRequest request, CancellationToken ct = default)
     {
-        var tenant = "grupojrc";
-        var allowedNumberChip = "551148004100";
+        // H4: Read tenant and allowed chip from configuration instead of hardcoding
+        var tenant = _config["Sytel:AllowedTenant"] ?? "grupojrc";
+        var allowedNumberChip = _config["Sytel:AllowedNumberChip"] ?? "551148004100";
 
         if (request.NumberChip != allowedNumberChip)
         {
@@ -41,17 +47,21 @@ public class HsmDispatchService : IHsmDispatchService
             return new OutboundHsmResponse(false, string.Empty, "FAILED", null, $"NumberChip '{request.NumberChip}' not authorized.", null);
         }
 
+        // H1: Null check for Destination
+        if (string.IsNullOrWhiteSpace(request.Destination))
+        {
+            _logger.LogWarning("Missing Destination in dispatch request for campaign {Campaign}", request.Campaign);
+            return new OutboundHsmResponse(false, string.Empty, "FAILED", null, "Destination phone number is required.", null);
+        }
+
         var campaignRunId = string.IsNullOrWhiteSpace(request.CampaignRunId) ? "2026-08" : request.CampaignRunId;
         var correlationId = $"{tenant}:{request.Campaign}:{campaignRunId}:{request.RecordId}:{request.TemplateId}";
 
-        // Check for Idempotency
-        var existing = _db.Dispatches.FirstOrDefault(d =>
-            d.Tenant == tenant &&
-            d.Campaign == request.Campaign &&
-            d.CampaignRunId == campaignRunId &&
-            d.RecordId == request.RecordId &&
-            d.TemplateId.ToString() == request.TemplateId ||
-            d.ProviderCorrelationId == correlationId);
+        // C4: Fix idempotency — use ProviderCorrelationId (which is the composite key as string).
+        // The old code compared d.TemplateId (Guid) with request.TemplateId (provider string) and had
+        // operator precedence issues with ||. Simplified to use the unique correlation ID.
+        var existing = _db.Dispatches
+            .FirstOrDefault(d => d.ProviderCorrelationId == correlationId);
 
         if (existing != null)
         {
@@ -78,7 +88,7 @@ public class HsmDispatchService : IHsmDispatchService
             return new OutboundHsmResponse(false, correlationId, "FAILED", null, $"No active media lease found for template '{request.TemplateId}'.", null);
         }
 
-        // PII Masking: SHA-256 Hash of destination phone
+        // PII Masking: SHA-256 Hash of destination phone (H1 null-check is done above)
         var destHash = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(request.Destination)));
         var destLast4 = request.Destination.Length >= 4 ? request.Destination[^4..] : request.Destination;
 

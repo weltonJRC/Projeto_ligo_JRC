@@ -3,6 +3,7 @@ using Jrc.LigoCampaignGateway.Application.Models;
 using Jrc.LigoCampaignGateway.Application.Services;
 using Jrc.LigoCampaignGateway.Domain.Entities;
 using Jrc.LigoCampaignGateway.Domain.Enums;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
@@ -27,11 +28,16 @@ public class HsmDispatchServiceTests
         var dispatches = new List<MessageDispatch>().AsQueryable();
         _dbMock.Setup(d => d.Dispatches).Returns(dispatches);
 
+        var configMock = new Mock<IConfiguration>();
+        configMock.Setup(c => c["Sytel:AllowedTenant"]).Returns("grupojrc");
+        configMock.Setup(c => c["Sytel:AllowedNumberChip"]).Returns("551148004100");
+
         _service = new HsmDispatchService(
             _dbMock.Object,
             _templateServiceMock.Object,
             _mediaLeaseServiceMock.Object,
             _hsmClientMock.Object,
+            configMock.Object,
             NullLogger<HsmDispatchService>.Instance
         );
     }
