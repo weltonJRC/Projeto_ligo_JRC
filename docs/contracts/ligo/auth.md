@@ -19,7 +19,7 @@ Content-Type: application/json
 ## Response Body (HTTP 200)
 ```json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZGQ5YmJjMjlmN2IwNjk2OWQ1OGQzZSIsImlhdCI6MTY2MTI2NDg2NSwiZXhwIjoxNjYxMzUxMjY1fQ.qE0m72GZTEcMKPcAbvTMeAmrVWY0CnGREvqA2NcmFWU",
+  "token": "<JWT_RETORNADO_PELA_LIGO>",
   "validate": "10-12-70T09:41:00.123Z"
 }
 ```
@@ -28,3 +28,7 @@ Content-Type: application/json
 ```http
 x-access-token: {{token}}
 ```
+
+## Limite de validação
+
+Este exemplo não comprova o contrato vigente do fornecedor. Confirmar endpoint e campos antes de modo Real. Token ilustrativo anterior foi substituído por placeholder em 19/10/2026; o histórico Git não foi reescrito.

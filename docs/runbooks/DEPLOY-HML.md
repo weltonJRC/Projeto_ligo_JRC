@@ -9,9 +9,9 @@
 1. Clonar o repositório no servidor de homologação:
    ```bash
    git clone https://github.com/weltonJRC/Projeto_ligo_JRC.git
-   cd Jrc.LigoCampaignGateway
+   cd Projeto_ligo_JRC
    ```
-2. Configurar o arquivo `.env` com os valores de HML:
+2. Preparar os valores de HML abaixo. **Atenção:** o Compose versionado contém valores literais em `environment`; criar um `.env` isoladamente não os substitui. Antes do deploy, configurar interpolação ou override explicitamente e conferir a configuração resolvida em ambiente privado. Não publicar credenciais.
    ```env
    LIGO__MODE=Mock
    LIGO__AUTHBASEURL=https://api.messaging.digitalcontact.cloud
